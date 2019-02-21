@@ -1,19 +1,21 @@
 package com.example.text_to_speech;
 
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.Locale;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextToSpeech toSpeech;
-    EditText editText;
+    TextInputLayout editText;
     Button bspeak,bstop;
     String text;
     int result;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else
                 {
-                    text = editText.getText().toString();
+                    text = editText.getEditText().getText().toString().trim();
                     toSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null);
                 }
                 break;

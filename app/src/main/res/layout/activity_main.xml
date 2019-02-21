@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:id="@+id/editText" />
+        android:hint="Enter your text"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:text="SPEAK"
@@ -22,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:id="@+id/bspeak"
+        android:layout_gravity="center"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"/>
 
@@ -33,6 +38,7 @@
         android:layout_alignLeft="@+id/bspeak"
         android:layout_alignStart="@+id/bspeak"
         android:layout_marginTop="77dp"
+        android:layout_gravity="center"
         android:id="@+id/bstop"/>
 
-</RelativeLayout>
+</LinearLayout>
